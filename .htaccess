@@ -1,5 +1,7 @@
-RewriteEngine on
-RewriteCond %{HTTP_HOST} ^storylab.hu$ [NC,OR]
-RewriteCond %{HTTP_HOST} ^www.storylab.hu$
+RewriteEngine On
+Options +FollowSymlinks
+RewriteBase /
+
+RewriteCond %{HTTP_HOST} ^.*$
 RewriteCond %{REQUEST_URI} !public/
-RewriteRule (.*) /public/$1 [L]
+RewriteRule ^(.*)$ public/$1 [L]
