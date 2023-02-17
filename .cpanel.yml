@@ -1,4 +1,6 @@
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/storylab/public_html/
-    - /bin/cp -R * $DEPLOYPATH
+    - export PRIVATEPATH=/home/storylab/statamic/
+    - /bin/cp -R --exclude='public' * $PRIVATEPATH
+    - export PUBLICPATH=/home/storylab/public_html/
+    - /bin/cp -R public/* $PUBLICPATH
